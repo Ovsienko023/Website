@@ -9,6 +9,13 @@ def get_config():
             "dirs": {"logsdir": "C:\\ProgramData\\website"},
             "webapi": {"port": 8888}
         }
+    if sys.platform == "darwin":
+        config = {
+            "db": {"host": "localhost", "port": 5433, "dbname": "website", "username": "postgres", "password": "",
+                   "charset": "utf8"},
+            "dirs": {"logsdir": "/Users/aleksandrskiba/Documents/logs"},
+            "webapi": {"port": 8888}
+        }
     else:
         config = {
             "db": {"host": "localhost", "port": 5433, "dbname": "website", "username": "postgres", "password": "",
